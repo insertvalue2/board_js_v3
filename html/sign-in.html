@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+  </head>
+  <body>
+    <!-- 헤더 섹션과 네비 영역 -->
+    <header>
+      <nav class="nav-container">
+        <div class="nav-item">
+          <span class="menu-link">게시판</span>
+        </div>
+        <div class="nav-item">
+          <span class="menu-link">로그인</span>
+          <span class="menu-link">회원가입</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content-wrapper">
+      <section class="form-title">
+        <h1>로그인(By JS)</h1>
+      </section>
+
+      <section>
+        <form onsubmit="return false;">
+          <table>
+            <tr>
+              <th>아이디</th>
+              <td>
+                <input type="text" class="inputs" placeholder="아이디를입력하세요" value="tenco1">
+              </td>
+            </tr>
+            <tr>
+              <th>비밀번호확인</th>
+              <td>
+                  <input type="password" class="inputs" placeholder="비밀번호를입력하세요" value="1234">
+              </td>
+          </table>
+          <div class="btn-area">
+            <button type="button" id="signInBtn" class="btn">로그인</button>
+        </div>
+        </form>
+      </section>
+
+    </main>
+    
+    <script src="../js/header.js"></script>
+    <script src="../js/signIn.js"></script>
+  </body>
+</html>

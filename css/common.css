@@ -1,0 +1,104 @@
+/* 기본 스타일 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* 
+요소의 크기를 계산하는 방법을 정의
+모든 요소에 일관되게 box-sizing(모두 포함된 크기로 계산)을 적용 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}   
+
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: center;
+    
+}
+/* Flex 컨테이너가 Flex 랩핑(flex-wrap)을 사용하여 여러 줄로
+    구성된 경우 align-content: center;를 사용해야 적용이 된다. 
+*/
+
+/* 제목 섹션 스타일 */
+.form-title h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 테이블과 테이블 요소 스타일 */
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;    
+}
+/* border-collapse: collapse는 CSS에서 테이블의 
+셀 간 테두리(border)를 어떻게 처리할지 결정하는 속성.
+테두리가 중복되는 것을 방지하거나 
+각 셀의 테두리를 따로 유지할지를 설정할 수 있습니다. */
+
+table {
+    width: 100%;
+    margin: 0;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+}
+
+/* 테이블을 감싸고 있는 섹션 스타일 */
+section {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* 인풋 박스 스타일 */
+.inputs {
+    width: calc(100% - 22px);
+    height: 40px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+}
+
+/* 버튼 스타일 */
+.btn-small {
+    font-size: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* 버튼 영역 스타일 */
+.btn-area {
+    display: flex;
+    justify-content: right;
+    margin: 20px 0;
+}

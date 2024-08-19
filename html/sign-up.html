@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 회원가입</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>  
+        <!-- 헤더 섹션과 네비게이션 메뉴  영역 -->
+        <header>
+            <nav class="nav-container">
+                <div class="nav-item">
+                    <span class="menu-link" id="board">게시판</span>
+                </div>
+                <div class="nav-item">
+                    <span class="menu-link" id="singIn">로그인</span>
+                    <span class="menu-link" id="signUp">회원가입</span>
+                </div>
+            </nav>
+        </header>
+       
+        <main class="content-wrapper">
+            <!-- 회원 가입 제목 영역 -->
+            <section class="form-title">
+                <h1>회원가입 by JS</h1>
+            </section>
+
+            <!-- 회원 가입 폼 영역 -->
+            <section>
+                <form action="">
+                    <table>
+                        <tr>
+                            <th>아이디</th>
+                            <td>
+                                <input type="text" class="inputs" placeholder="아이디를입력하세요" value="tenco1">
+                                <button type="button" id="checkIdBtn" class="btn-small" >중복확인</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>닉네임</th>
+                            <td>
+                                <input type="text" class="inputs" placeholder="닉네임을 입력하세요" value="텐코1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호</th>
+                            <td>
+                                <input type="password" class="inputs" placeholder="비밀번호를입력하세요" value="1234">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호확인</th>
+                            <td>
+                                <input type="password" class="inputs" placeholder="비밀번호를입력하세요" value="1234">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="btn-area">
+                        <button type="button" id="signUpBtn" class="btn">회원가입</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <!--  스크립트 파일 연결 -->
+        <!-- js 파일은 body 태그 하단에 두는 것이 일반적입니다.
+         이는 모든 HTML 요소가 로드된 후에 스크립트를 실행하기 위함이며, 
+         DOM 요소를 문제 없이 찾고, 페이지 로드 속도를 최적화하는 데 도움이 됩니다. -->
+         <script src="../js/header.js"></script>
+         <script src="../js/signUp.js"></script>
+</body>
+</html>
