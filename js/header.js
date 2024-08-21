@@ -43,4 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'sign-up.html'; // 회원가입 페이지로 이동
         });
     }
+
+
 });
+
+
+// 로그인 상태가 아니면 지정된 페이지로 리디렉션
+function redirectToPageIfNotLoggedIn(page) {
+    // 로컬 스토리지에서 로그인 상태 확인
+    const loggedInUser = localStorage.getItem("user");
+    // 만약 로그인된 사용자가 없으면 지정된 페이지로 이동
+    if (loggedInUser === null) {
+        window.location.href = `${page}.html`;
+    }
+}
+

@@ -9,14 +9,16 @@
   </head>
   <body>
     <!-- 헤더 섹션과 네비 영역 -->
-    <header class="nav-container">
-      <div class="nav-item">
-        <span class="menu-link" id="board">게시판</span>
-      </div>
-      <div class="nav-item" id="authLinks">
-        <span class="menu-link" id="signIn">로그인</span>
-        <span class="menu-link" id="signUp">회원가입</span>
-      </div>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-item">
+          <span class="menu-link" id="board">게시판</span>
+        </div>
+        <div class="nav-item" id="authLinks">
+          <span class="menu-link" id="signIn">로그인</span>
+          <span class="menu-link" id="signUp">회원가입</span>
+        </div>
+      </nav>
     </header>
 
     <main class="content-wrapper">
@@ -30,13 +32,23 @@
             <tr>
               <th>아이디</th>
               <td>
-                <input type="text" class="inputs" placeholder="아이디를입력하세요" value="tenco1" />
+                <input
+                  type="text"
+                  class="inputs"
+                  placeholder="아이디를입력하세요"
+                  value="tenco1"
+                />
               </td>
             </tr>
             <tr>
               <th>비밀번호확인</th>
               <td>
-                <input type="password" class="inputs" placeholder="비밀번호를입력하세요" value="1234" />
+                <input
+                  type="password"
+                  class="inputs"
+                  placeholder="비밀번호를입력하세요"
+                  value="1234"
+                />
               </td>
             </tr>
           </table>
