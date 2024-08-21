@@ -93,10 +93,8 @@ function registerUser() {
     userInfo.push(newUser);
     localStorage.setItem("userList", JSON.stringify(userInfo));
     alert("회원가입 완료");
-    
-    // TODO - sign-in.html 생성후 주석 해제 
-    // 회원가입 완료 후 로그인 페이지로 이동
-    //window.location.href = "sign-In.html"; 
+        
+    window.location.href = "sign-In.html"; 
 }
 
 // 4. 이벤트 리스너 등록

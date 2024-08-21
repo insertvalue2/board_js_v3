@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 게시글 목록</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/boadList.css">
+</head>
+<body>  
+        <!-- 헤더 섹션과 네비 영역 -->
+        <header class="nav-container">
+            <div class="nav-item">
+                <span class="menu-link"  id="board">게시판</span>
+            </div>
+            <div class="nav-item"  id="authLinks">
+                <span class="menu-link"  id="signIn">로그인</span>
+                <span class="menu-link"  id="signUp">회원가입</span>
+            </div>
+        </header>
+
+        <main class="content-wrapper">
+            <section class="title-box">
+                <h1>게시판</h1>
+            </section>
+
+            <div class="content-box">
+				<div class="board-box">
+					<div class="head">
+						<div class="head-1">번호</div>
+						<div class="head-2">제목</div>
+						<div class="head-3">작성자</div>
+						<div class="head-4">작성일</div>
+						<div class="head-5">조회수</div>
+					</div>
+					<div class="board-content-box">
+                        <!-- js로 html 요소 넣기 (반복문 활용) -->
+                        <!-- 삭제 예정 -->
+                        <div class="board">
+                            <div class="board-1">1</div>
+                            <div class="board-2">후미지 어느 언덕에서</div>
+                            <div class="board-3">홍길동</div>
+                            <div class="board-4">202x.0x.11</div>
+                            <div class="board-5">11</div>
+                        </div>
+                    </div>
+				</div>
+				<div class="button-box">
+					<div class="page-box">
+						<span class="left">◀</span>
+						<div class="num-box">
+							<span class="num">1</span>
+						</div>
+						<span class="right">▶</span>
+					</div>
+					<div class="write-button-box">
+						<button type="button" class="btn">글쓰기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        </main>
+        
+
+         <script src="../js/header.js"></script>
+         <script src="../js/boardList.js"></script>
+</body>
+</html>
