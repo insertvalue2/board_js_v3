@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-item">
+          <span class="menu-link" id="board">게시판</span>
+        </div>
+        <div class="nav-item" id="authLinks">
+          <span class="menu-link" id="signIn">로그인</span>
+          <span class="menu-link" id="signUp">회원가입</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content-wrapper">
+      <section class="title-box">
+        <h1>상세보기 화면 by JS</h1>
+      </section>
+
+      <section>
+        <table>
+            <tr>
+                <th>제목</th>
+                <td>
+                    <input type="text" class="inputs" readonly="true">
+                </td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td>
+                    <input type="text" class="inputs" readonly="true">
+                </td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>
+                    <div>
+                        <div class="img-box"></div>
+                        <pre class="content" readonly="true"></pre>
+                    </div>
+                </td>
+            </tr>
+        </table>
+      </section>
+
+      <div class="btn-area">
+        <button type="button" class="btn" id="">삭제</button>
+        &nbsp;&nbsp;
+        <button type="button" class="btn" id="">수정</button>
+    </div>
+    </main>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/boardDetail.js"></script>
+  </body>
+</html>

@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 로컬스토리지에서 게시글 목록을 가져오기
   const storedBoardList = JSON.parse(localStorage.getItem("boardList"));
-
+  
+  // 게시글 목록을 내림차순으로 정렬
+  if (storedBoardList) {
+    storedBoardList.reverse();
+  }
+  
   // 현재 페이지
   let currentPage = 0;
   const limit = 2; // 한 페이지당 게시글 수 (limit)
@@ -28,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 현재 페이지에 해당하는 게시글을 HTML 요소로 변환
       for (let i = offset; i < end && i < storedBoardList.length; i++) {
         postElements += `
-                <div class="board">
+                <div class="board" data-id="${storedBoardList[i].id}">
                     <div class="board-1">${i + 1}</div>
                     <div class="board-2">${storedBoardList[i].title}</div>
                     <div class="board-3">${storedBoardList[i].username}</div>
@@ -84,13 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 게시글 클릭 시 페이지 이동 함수
-  function addPostClickListeners(postElements) {
+
+
+   // 게시글 클릭 시 페이지 이동 함수
+   function addPostClickListeners(postElements) {
     for (let i = 0; i < postElements.length; i++) {
       postElements[i].onclick = function () {
-        // 게시글을 클릭하면 해당 게시글의 인덱스를 로컬스토리지에 저장하고 상세 페이지로 이동
-        localStorage.setItem("page", i);
-        location.href = "read.html"; // 상세 페이지로 이동
+        const postId = postElements[i].getAttribute("data-id"); // 게시글의 ID 값을 가져옴
+        // 게시글을 클릭하면 해당 게시글의 ID를 URL에 전달하여 상세 페이지로 이동
+        location.href = `board-detail.html?id=${postId}`;
       };
     }
   }
@@ -101,44 +108,52 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-// 샘플 데이터
-// const sampleBoardList = [
-//   {
-//     title: "첫 번째 게시글",
-//     content: "첫 번째 게시글의 내용입니다.",
-//     username: "홍길동",
-//     today: "2024.06.25",
-//     count: 5,
-//   },
-//   {
-//     title: "두 번째 게시글",
-//     content: "두 번째 게시글의 내용입니다.",
-//     username: "이몽룡",
-//     today: "2024.06.26",
-//     count: 8,
-//   },
-//   {
-//     title: "세 번째 게시글",
-//     content: "세 번째 게시글의 내용입니다.",
-//     username: "성춘향",
-//     today: "2024.06.27",
-//     count: 10,
-//   },
-//   {
-//     title: "네 번째 게시글",
-//     content: "네 번째 게시글의 내용입니다.",
-//     username: "변학도",
-//     today: "2024.06.28",
-//     count: 3,
-//   },
-//   {
-//     title: "다섯 번째 게시글",
-//     content: "다섯 번째 게시글의 내용입니다.",
-//     username: "심청",
-//     today: "2024.06.29",
-//     count: 7,
-//   },
-// ];
 
-// 로컬 스토리지에 샘플 데이터 저장
-//localStorage.setItem("boardList", JSON.stringify(sampleBoardList));
+// 샘플 데이터
+const sampleBoardList = [
+    {
+      id: 1,
+      title: "첫 번째 게시글",
+      content: "첫 번째 게시글의 내용입니다.",
+      username: "홍길동",
+      today: "2024.06.25",
+      count: 5,
+    },
+    {
+      id: 2,
+      title: "두 번째 게시글",
+      content: "두 번째 게시글의 내용입니다.",
+      username: "이몽룡",
+      today: "2024.06.26",
+      count: 8,
+    },
+    {
+      id: 3,
+      title: "세 번째 게시글",
+      content: "세 번째 게시글의 내용입니다.",
+      username: "성춘향",
+      today: "2024.06.27",
+      count: 10,
+    },
+    {
+      id: 4,
+      title: "네 번째 게시글",
+      content: "네 번째 게시글의 내용입니다.",
+      username: "변학도",
+      today: "2024.06.28",
+      count: 3,
+    },
+    {
+      id: 5,
+      title: "다섯 번째 게시글",
+      content: "다섯 번째 게시글의 내용입니다.",
+      username: "심청",
+      today: "2024.06.29",
+      count: 7,
+    },
+  ];
+  
+  // 로컬 스토리지에 샘플 데이터 저장 (한번 동작 후 수정 처리)
+  // localStorage.setItem("boardList", JSON.stringify(sampleBoardList));
+  
+

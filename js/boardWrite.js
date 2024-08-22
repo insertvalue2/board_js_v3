@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // 비 로그인시 페이지 이동 처리 
     redirectToPageIfNotLoggedIn('sign-in');
 
-
     // 사용할 요소 접근 및 로컬스토리지 사용
     const title = document.querySelector('.title'); // 제목 입력 필드
     const username = document.querySelector('.username'); // 사용자명 입력 필드
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // 로컬 스토리지에서 사용자 정보 가져오기
     const getUser = JSON.parse(localStorage.getItem('user'));
     username.value = getUser.username; // 로그인한 사용자의 이름을 필드에 표시
-    
 
     // 파일 업로드 함수
     function fileUpload(event) {
@@ -46,6 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
         reader.readAsDataURL(file); // 파일을 Base64 형식으로 읽기
     }
 
+    // 고유 ID 생성 함수
+    function generateUniqueId(boardList) {
+        return boardList.length > 0 ? boardList[boardList.length - 1].id + 1 : 1;
+    }
+
     // 글 저장 함수
     function saveBoard() {
         // 필수 입력값 체크
@@ -61,8 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // 로컬 스토리지에서 게시글 목록 가져오기
+        let boardList = JSON.parse(localStorage.getItem('boardList')) || [];
+
+        // 고유 ID 생성
+        const newId = generateUniqueId(boardList);
+
         // 게시글 객체 생성
         const board = {
+            id: newId, // 고유 ID 값 추가
             title: title.value,
             content: content.value,
             username: username.value,
@@ -72,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // 로컬 스토리지에 저장
-        let boardList = JSON.parse(localStorage.getItem('boardList')) || [];
         boardList.push(board); // 새 게시글 추가
         localStorage.setItem("boardList", JSON.stringify(boardList)); // JSON 형식으로 저장
 
@@ -83,5 +92,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // 이벤트 리스너 추가
     fileInput.addEventListener('change', fileUpload);
     button.addEventListener('click', saveBoard);
-   
 });
