@@ -30,21 +30,22 @@
             <tr>
                 <th>제목</th>
                 <td>
-                    <input type="text" class="inputs" readonly="true">
+                    <input type="text" class="inputs" readonly="true" id="title">
                 </td>
             </tr>
             <tr>
                 <th>작성자</th>
                 <td>
-                    <input type="text" class="inputs" readonly="true">
+                    <input type="text" class="inputs" readonly="true" id="username">
                 </td>
             </tr>
             <tr>
                 <th>내용</th>
                 <td>
                     <div>
-                        <div class="img-box"></div>
-                        <pre class="content" readonly="true"></pre>
+                        <div class="img-box" id="imgBox">                        
+                        </div>
+                        <pre class="content" readonly="true" id="content"></pre>
                     </div>
                 </td>
             </tr>
@@ -52,9 +53,9 @@
       </section>
 
       <div class="btn-area">
-        <button type="button" class="btn" id="">삭제</button>
+        <button type="button" class="btn delete-button"  style="display: none;">삭제</button>
         &nbsp;&nbsp;
-        <button type="button" class="btn" id="">수정</button>
+        <button type="button" class="btn edit-button"  style="display: none;">수정</button>
     </div>
     </main>
 
