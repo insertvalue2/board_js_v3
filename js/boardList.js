@@ -122,10 +122,8 @@ function addPostClickListeners(postElements) {
     for (let i = 0; i < postElements.length; i++) {
       postElements[i].onclick = async function () {
         const postId = postElements[i].getAttribute("data-id"); // 게시글의 ID 값을 가져옴
-  
         // 조회수 증가 후 페이지 이동
-        await increaseViewCount(storedBoardList, postId);
-        alert('동기적 방식이 필요할 때');
+        await increaseViewCount(storedBoardList, postId);            
         location.href = `board-detail.html?id=${postId}`;
       };
     }
@@ -143,14 +141,14 @@ function increaseViewCount(boardList, postId) {
             break;
           }
         }
-  
         // 업데이트된 게시글 목록을 로컬 스토리지에 저장
         localStorage.setItem("boardList", JSON.stringify(boardList.reverse()));
-  
         // 작업 완료 후 resolve 호출
         resolve();
+        alert('비동기 동작을 동기적 방식으로 만들어야 할 때가 있습니다.');
       }, 2000); // 2초 딜레이
     });
+    
   }
 
 
